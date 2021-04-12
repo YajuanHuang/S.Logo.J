@@ -1,0 +1,35 @@
+/*设置body部分的字体、字体颜色、字体大小、背景*/
+body {margin: auto; background-color: #f2f4f4 ; font-family: sans-serif; color: black;}
+
+.fileregion{margin-right:4em; margin-left:4em; background-color:#f1f8e9;}
+/*设置标题和正文的字体、字体颜色、字体大小、背景*/
+h1 {text-align: center; font: bold 250% Georgia; color:#00008B}
+h2 {font: bold 160% Georgia}
+h3 {font: bold italic 100% Georgia}
+p {text-align:left; font: 80% Georgia; margin-top: 0em}
+
+label{font: 100% Georgia;}
+
+button{/*float: left;*/
+  display: inline-block;
+  font: bold 100% Georgia;
+  background: #4caf50;
+  border-color: #43a047;/*按钮边界颜色*/
+  color: white;
+  margin: auto;
+  padding: 0.3em;
+  width:49%;}
+
+
+#img2download{width:98.5%;
+  background: #78909c;
+  border-color: #607d8b;}
+/*设置class为file的字体、字体颜色、字体大小、背景*/
+#file{font-size:120%;}
+#sequence-data-text{font-size:15px;}
+
+input{width: 265px;
+}
+#percentCG{
+  width:50px;
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Sequence Logo </title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="seqlogo.css"> </link>
+</head>
+
+<body>
+  <div> <!--open main part dive-->
+    <h1> SeqLogo </h1>
+    <fieldset class="fileregion">
+      <legend> <h2> Input sequence data </h2> </legend>
+      <form enctype="multipart/form-data">
+        <h3> Paste sequences here: </h3>
+        <textarea id="sequence_text" type="text" name="sequences" cols="120" placeholder="Please paste sequences here(fasta format)!"></textarea>
+        <p id="text1"> </p>
+        <hr style="background-color:lightgrey; border-color:lightgrey;">
+        <h3> Or upload sequence file here:</h3>
+        <input type="file" id="sequence_file"/>
+        <p id="text2"> </p>
+        <p> <strong> Note: </strong> Fasta format ! </p>
+        <hr style="border:1; background-color:black; height:2px;">
+        <h2> Option: </h2>
+      <div class="Composition"> <!--open composition dive-->
+        <label> Composition: </label>
+        <select id="composition">
+          <option selected value="comp_auto"> Auto </option>
+          <option  value="comp_equiprobable"> Equiprobable </option>
+          <option  value="comp_Hsapiens"> H. sapiens (40%) </option>
+          <option  value="comp_Celegans"> C. elegans (36%) </option>
+          <option  value="comp_Ecoli"> E. coli (50.5%) </option>
+          <option  value="comp_Mmusculus"> M. musculus (42%) </option>
+          <option  value="comp_Scerevisiae"> S. cerevisiae (38%) </option>
+          <option  value="comp_CG"> CG Percentage&#8658;</option>
+        </select>
+        <span> or </span>
+        <input type="text" id="percentCG" onkeyup="value=value.replace(/^\D*(\d*(?:\.\d{0,1})?).*$/g, '$1')" size="4" maxlength="8">
+        <span> %G+C </span>
+      </div> <!--close composition div-->
+      <p id="text4"> </p>
+        <div align="center"> <!--open last buttons dive-->
+          <button id="btn" type="submit" method="get" onclick="getfile(); sequence_logo();"> Create sequence logo </button>
+          <button type="reset"> Clear </button>
+        </div> <!--close last buttons dive-->
+      </form>
+    </fieldset>
+  </div> <!--close main part dive-->
+  <div> <!--open sequence logo dive-->
+    <fieldset class="fileregion" id="lastfield">
+      <legend> <h2> Here's your sequence logo! </h2> </legend>
+      <br>
+      <div align="center">
+        <canvas id="logo"> </canvas>
+      </div>
+      <br>
+      <form>
+      <div align="center">
+      <label> Logo Title: </label>
+      <input type="text" id="title" maxlength="20" placeholder="Add your logo title here, max 20 characters!" name="logotitle"/>
+      <p id="text3"> </p>
+    </div>
+    <div align="center"> <!--open last buttons dive-->
+      <button type="button"  onclick="javascript:location.reload()"> Add logo title </button>
+      <button type="reset"> Clear </button>
+    </div> <!--close last buttons dive-->
+    <br>
+    <div align="center"> <!--start download checkbox div-->
+        <button id="img2download" type="submit" onclick="downloadPNG('logo', 'seqlogo.png')"> Download the Logo </button>
+    </div> <!--end download checkbox div div-->
+  </form>
+      <script type="text/javascript" src="js/seqlogo.js"> </script>
+      <script>
+      sequence_logo('logo');
+    </script>
+  </fieldset>
+</div> <!--close sequence logo dive-->
+</body>
+</html>

@@ -8,10 +8,10 @@
   * S.Logo.J.html
   * seqlogo.css
 ## Uasge
-### Clone or download it to local drive
-'''
+### Clone or copy it to local drive
+```
 git clone https://github.com/YajuanHuang/S.Logo.J.git
-'''
+```
 ### Start the Website
   * Click the file named "S.Logo.J.html"  
   * Upload or paste the sequences  
